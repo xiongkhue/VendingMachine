@@ -46,7 +46,7 @@ public class VendingMachineItem {
         this.quantity = Integer.parseInt(quantity);
     }
     
-    
+    //Enum for coin values
     public enum Coin {
         PENNY(".01"), NICKEL(".05"), DIME(".10"), QUARTER(".25");
         
