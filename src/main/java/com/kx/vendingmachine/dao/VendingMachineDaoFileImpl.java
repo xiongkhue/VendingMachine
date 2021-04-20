@@ -16,12 +16,12 @@ import java.util.Map;
  */
 public class VendingMachineDaoFileImpl implements VendingMachineDao{
     
-    private Map<String, VendingMachineItem> vendingItems = new HashMap<>();
+    private Map<String, VendingMachineItem> vendingMachineItems = new HashMap<>();
     public static final String VENDINGITEMS_FILE = "vendingitems";
     public static final String DELIMITER = "::";
 
     @Override
-    public VendingMachineItem addVendingMachineItem(String tag, VendingMachineItem vendingItem) throws VendingMachineDaoException {
+    public VendingMachineItem addVendingMachineItem(String tag, VendingMachineItem vendingMachineItems) throws VendingMachineDaoException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
