@@ -24,7 +24,7 @@ public interface VendingMachineDao {
      * @return the Item object previously associated with the given  
      * item id if it exists, null otherwise
      */
-    VendingMachineItem addVendingMAchineItem(String tag, VendingMachineItem vendingItem)
+    VendingMachineItem addVendingMachineItem(String tag, VendingMachineItem vendingItem)
             throws VendingMachineDaoException;
     
     /**
