@@ -20,6 +20,7 @@ public class VendingMachineController {
     VendingMachineView view;
     VendingMachineDao  dao;
     
+    //Bring together MVC
     public VendingMachineController(VendingMachineDao  dao, VendingMachineView view) {
     this.dao = dao;
     this.view = view;
@@ -35,7 +36,8 @@ public class VendingMachineController {
             while (keepGoing) {
             
                 menuSelection = getMenuSelection();
-
+                
+                //User input to choice
                 switch (menuSelection) {
                     case 1:
                         listVendingMachineItems();

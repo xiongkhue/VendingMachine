@@ -12,4 +12,5 @@ package com.kx.vendingmachine.dao;
 public interface VendingMachineAuditDao {
     public void writeAuditEntry(String entry) 
             throws VendingMachineDaoException;
+    //Write data changes/timestamp to audit file
 }

@@ -13,19 +13,19 @@ import java.util.List;
  */
 public interface VendingMachineDao {
     
-    /**
-     * Adds the given Item to the Vending Machine and associates it with the given 
-     * item id/tag. If there is already a item associated with the given 
-     * item id it will return that item object, otherwise it will 
-     * return null.
-     * 
-     * @param tag id with which item is to be associated
-     * @param vendingItem VendingMachineItem to be added to the Vending Machine
-     * @return the Item object previously associated with the given  
-     * item id if it exists, null otherwise
-     */
-    VendingMachineItem addVendingMachineItem(String tag, VendingMachineItem vendingMachineItem)
-            throws VendingMachineDaoException;
+//    /**
+//     * Adds the given Item to the Vending Machine and associates it with the given 
+//     * item id/tag. If there is already a item associated with the given 
+//     * item id it will return that item object, otherwise it will 
+//     * return null.
+//     * 
+//     * @param tag id with which item is to be associated
+//     * @param vendingItem VendingMachineItem to be added to the Vending Machine
+//     * @return the Item object previously associated with the given  
+//     * item id if it exists, null otherwise
+//     */
+//    VendingMachineItem addVendingMachineItem(String tag, VendingMachineItem vendingMachineItem)
+//            throws VendingMachineDaoException;
     
     /**
      * Returns a String array containing the item ids of all 
@@ -56,15 +56,15 @@ public interface VendingMachineDao {
     VendingMachineItem buyingVendingMachineItem(String tag, VendingMachineItem buying)
             throws VendingMachineDaoException;
     
-    /**
-     * Removes from the Vending Machine the item associated with the given id. 
-     * Returns the item object that is being removed or null if 
-     * there is no item associated with the given id
-     * 
-     * @param tag id of item to be removed
-     * @return Item object that was removed or null if no item 
-     * was associated with the given item id
-     */
-    VendingMachineItem removeVendingMachineItem(String tag)
-            throws VendingMachineDaoException;
+//    /**
+//     * Removes from the Vending Machine the item associated with the given id. 
+//     * Returns the item object that is being removed or null if 
+//     * there is no item associated with the given id
+//     * 
+//     * @param tag id of item to be removed
+//     * @return Item object that was removed or null if no item 
+//     * was associated with the given item id
+//     */
+//    VendingMachineItem removeVendingMachineItem(String tag)
+//            throws VendingMachineDaoException;
 }

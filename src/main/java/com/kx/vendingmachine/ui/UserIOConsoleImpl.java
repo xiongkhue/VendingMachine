@@ -29,6 +29,7 @@ public class UserIOConsoleImpl implements UserIO {
         System.out.println(message);
     };
     
+    //Read in user input when expecting int
     public int readInt(String prompt) {
         print(prompt);
         String temp = sc.nextLine();
@@ -48,6 +49,7 @@ public class UserIOConsoleImpl implements UserIO {
         return x;
     };
     
+    //Read in user input when expecting int (1-8)
     public int readInt(String prompt, int min, int max) {
         print(prompt);
         String temp = sc.nextLine();
@@ -73,6 +75,7 @@ public class UserIOConsoleImpl implements UserIO {
         return x;
     };
     
+    //Read in string
     public String readString(String prompt) {
         print(prompt);
         String s;
@@ -80,6 +83,7 @@ public class UserIOConsoleImpl implements UserIO {
         return s;
     };
     
+    //Read in user input for money (0.00-5.00)
     public String readStringDoubleUserMoney(String prompt) {
         print(prompt);
         String s;

@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
  */
 public class VendingMachineAuditDaoFileImpl implements VendingMachineAuditDao{
     
+    //Write data changes/timestamp to audit file
     public static final String AUDIT_FILE = "audit.txt";
    
     public void writeAuditEntry(String entry) throws VendingMachineDaoException {
