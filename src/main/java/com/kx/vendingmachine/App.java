@@ -11,6 +11,7 @@ import com.kx.vendingmachine.dao.VendingMachineAuditDaoFileImpl;
 import com.kx.vendingmachine.dao.VendingMachineDao;
 import com.kx.vendingmachine.dao.VendingMachineDaoFileImpl;
 import com.kx.vendingmachine.service.VendingMachineServiceLayer;
+import com.kx.vendingmachine.service.VendingMachineServiceLayerImpl;
 import com.kx.vendingmachine.ui.UserIO;
 import com.kx.vendingmachine.ui.UserIOConsoleImpl;
 import com.kx.vendingmachine.ui.VendingMachineView;
@@ -26,7 +27,8 @@ public class App {
         VendingMachineView myView = new VendingMachineView(myIO);
         VendingMachineDao myDao = new VendingMachineDaoFileImpl();
         VendingMachineAuditDao myAuditDao = new VendingMachineAuditDaoFileImpl();
-        VendingMachineController controller = new VendingMachineController(myDao, myView);
+        VendingMachineServiceLayer myService = new VendingMachineServiceLayerImpl(myDao, myAuditDao);
+        VendingMachineController controller = new VendingMachineController(myService, myView);
         controller.run();
     } 
     

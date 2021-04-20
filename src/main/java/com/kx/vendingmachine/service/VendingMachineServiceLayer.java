@@ -5,10 +5,24 @@
  */
 package com.kx.vendingmachine.service;
 
+import com.kx.vendingmachine.dao.VendingMachineDaoException;
+import com.kx.vendingmachine.dto.VendingMachineItem;
+import java.util.List;
+
 /**
  *
  * @author khuxi
  */
-public class VendingMachineServiceLayer {
+public interface VendingMachineServiceLayer {
+    
+    VendingMachineItem buyingVendingMachineItem(String name, VendingMachineItem buying)
+        throws VendingMachineDaoException;
+    
+    VendingMachineItem getVendingMachineItem(String tag)
+        throws VendingMachineDaoException;
+    
+    List<VendingMachineItem> getAllVendingMachineItems()
+            throws VendingMachineDaoException;
+    
     
 }

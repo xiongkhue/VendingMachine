@@ -5,9 +5,9 @@
  */
 package com.kx.vendingmachine.controller;
 
-import com.kx.vendingmachine.dao.VendingMachineDao;
 import com.kx.vendingmachine.dao.VendingMachineDaoException;
 import com.kx.vendingmachine.dto.VendingMachineItem;
+import com.kx.vendingmachine.service.VendingMachineServiceLayer;
 import com.kx.vendingmachine.ui.VendingMachineView;
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,11 +18,11 @@ import java.util.List;
  */
 public class VendingMachineController {
     VendingMachineView view;
-    VendingMachineDao  dao;
+    VendingMachineServiceLayer  service;
     
     //Bring together MVC
-    public VendingMachineController(VendingMachineDao  dao, VendingMachineView view) {
-    this.dao = dao;
+    public VendingMachineController(VendingMachineServiceLayer  service, VendingMachineView view) {
+    this.service = service;
     this.view = view;
     }
 
@@ -80,7 +80,7 @@ public class VendingMachineController {
     
     private void listVendingMachineItems() throws VendingMachineDaoException{
         view.displayDisplayAllBanner();
-        List<VendingMachineItem> vendingMachineItemList = dao.getAllVendingMachineItems();
+        List<VendingMachineItem> vendingMachineItemList = service.getAllVendingMachineItems();
         view.displayVendingMachineItemList(vendingMachineItemList);
     }
     
@@ -92,10 +92,10 @@ public class VendingMachineController {
     private String select(String name, BigDecimal money, boolean choice) throws VendingMachineDaoException{
         //view.displaySelectedBanner();
         view.displayItemBanner();
-        VendingMachineItem selectedVendingMachineItem = dao.getVendingMachineItem(name);
+        VendingMachineItem selectedVendingMachineItem = service.getVendingMachineItem(name);
         choice = view.displayVendingMachineItemAndOptions(selectedVendingMachineItem, money);
         VendingMachineItem buyVendingMachineItem = view.purchaseVendingMachineItem(choice, selectedVendingMachineItem);
-        dao.buyingVendingMachineItem(name, buyVendingMachineItem);
+        service.buyingVendingMachineItem(name, buyVendingMachineItem);
         String s = view.updateMoney(money, buyVendingMachineItem, choice);
         return s;
     }
